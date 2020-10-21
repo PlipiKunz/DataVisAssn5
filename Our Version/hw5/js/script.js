@@ -1,16 +1,16 @@
-// Loads in the table information from fifa-matches.json 
+// Loads in the table information from fifa-matches.json
 d3.json('data/fifa-matches.json').then(function(data) {
   // console.log('table data');
   // console.log(data);
 
    // Loads in the tree information from fifa-tree.csv and calls
    // createTree(csvData) to render the tree.
-  d3.csv("data/fifa-tree.csv").then(function(csvData) {
+  d3.csv("data/languageTree.csv").then(function(csvData) {
     // console.log('data');
     // console.log(csvData);
     //Create a unique "id" field for each game
     csvData.forEach(function (d, i) {
-      d.id = d.Team + d.Opponent + i;
+      d.id = d.langcode;
     });
 
     //Create Tree Object

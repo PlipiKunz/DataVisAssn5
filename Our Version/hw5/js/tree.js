@@ -17,27 +17,28 @@ class Tree {
 
     // ******* TODO: PART VI *******
 
-    // Create a tree and give it a size() of 800 by 300. 
+    // Create a tree and give it a size() of 800 by 300.
     // console.log('tree data');
     // console.log(treeData);
 
-    // Create a root for the tree using d3.stratify(); 
+    // Create a root for the tree using d3.stratify();
     let root = d3.stratify()
       .id(function(d, i) {
-        // console.log(i);
-        return i;
+        console.log(i+2);
+        console.log(d);
+        return (i+2);
       })
-      .parentId(function(d) { return d['ParentGame']; })
+      .parentId(function(d) { return d['Parent']; })
     (treeData);
 
-    
-    // Add nodes and links to the tree. 
+
+    // Add nodes and links to the tree.
     let mapped = d3.cluster().size([890, 400])(root);
 
     // Compute the new tree layout.
     let nodes = mapped.descendants();
     let links = mapped.descendants().slice(1);
-    
+
     // console.log(root);
     // console.log(mapped);
     // console.log(nodes);
@@ -50,7 +51,6 @@ class Tree {
     var link = svg.selectAll(".link")
       .data(links)
       .enter().append("path")
-      .attr("class", d => d.data.Team + d.parent.data.Team)
       .classed("link", true)
       .classed('treelink', true)
       .attr("stroke-width", 2)
@@ -75,11 +75,8 @@ class Tree {
 
     // Add Circle for the nodes
     nodeEnter.append('circle')
-      .attr("class", d => d.data.Team)
-      .classed('winner', d => d.data.Wins == 1)
-      .classed('loser', d => d.data.Wins == 0)
+      .attr("class", d => d.data.Name)
       .classed('treenode', true)
-      .attr('fill', d => d.data.Wins == 1 ? '#364e74' : '#be2714')
       .attr('r', 5)
     ;
 
@@ -88,7 +85,7 @@ class Tree {
       .attr("dy", ".35em")
       .attr("x", -10)
       .attr("text-anchor", "end")
-      .text(d => d.data.Team);
+      .text(d => d.data.Name);
 
   };
 
@@ -117,7 +114,7 @@ class Tree {
   clearTree() {
     // ******* TODO: PART VII *******
 
-    // You only need two lines of code for this! No loops! 
+    // You only need two lines of code for this! No loops!
     // nodes
     d3.selectAll('.treenode')
       .attr('r', 5)
