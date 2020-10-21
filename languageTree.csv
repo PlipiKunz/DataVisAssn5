@@ -1,0 +1,24 @@
+Name	LanguageT/F	GenusT/F	FamilyT/F	Parent	langcode
+Root	FALSE	FALSE	FALSE		
+Afro-Asiatic	FALSE	FALSE	TRUE	2	
+Semitic	FALSE	TRUE	FALSE	3	
+Arabic(Egyptian)	TRUE	FALSE	FALSE	4	aeg
+Hebrew (Modern)	TRUE	FALSE	FALSE	4	heb
+Indo-European	FALSE	FALSE	TRUE	2	
+Germanic	FALSE	TRUE	FALSE	7	
+German	TRUE	FALSE	FALSE	8	ger
+English	TRUE	FALSE	FALSE	8	eng
+Romance	FALSE	TRUE	FALSE	7	
+French	TRUE	FALSE	FALSE	11	fre
+Spanish	TRUE	FALSE	FALSE	11	sapa
+Celtic	FALSE	TRUE	FALSE	7	
+Irish	TRUE	FALSE	FALSE	14	iri
+Sibo-Tibetan	FALSE	FALSE	TRUE	2	
+Chinese	FALSE	TRUE	FALSE	16	
+Mandarin	TRUE	FALSE	FALSE	17	mnd
+Kuki-Chin	FALSE	TRUE	FALSE	16	
+Bawm	TRUE	FALSE	FALSE	19	baw
+Meithei	TRUE	FALSE	FALSE	19	mei
+Uralic	FALSE	FALSE	TRUE	2	
+Ugric	FALSE	TRUE	FALSE	22	
+Hungarian	TRUE	FALSE	FALSE	23	hun
