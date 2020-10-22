@@ -30,11 +30,11 @@ tbody th{
 }
 
 .aggregate{
-    color: #317f19;
+    color: #0000ff;
 }
 
 .game{
-    color: #b1b1b1;
+    color: #000055;
 }
 
 tbody td {
@@ -61,25 +61,11 @@ tbody tr .game {
     font: 14px sans-serif;
 }
 
-@font-face {
-    font-family: 'aller';
-    src: url('assets/aller.ttf');
-}
-
-@font-face {
-    font-family:'brazil';
-    src: url('assets/brasil_cup_font.otf');
-}
-
 h1 {
     margin-top: 0;
-    font-family: 'brazil';
-    color: #317f19;
 }
 
 h2 {
-    font-family: 'brazil';
-    color: #317f19;
     padding-bottom: 0;
     margin-top: 3px;
     margin-bottom: 0;
@@ -90,8 +76,8 @@ h3 {
     margin-bottom: 0px;
 }
 
-* {
-    font-family: 'aller';
+body{
+  background-color: #B0E0E6;
 }
 
 header {
@@ -143,19 +129,6 @@ header {
     font: 14px sans-serif;
 }
 
-.winner circle {
-    fill: #364e74;
-    stroke: green;
-}
-
-.loser circle {
-    fill: #be2714;
-    stroke: green;
-}
-
-.loser text {
-    text-shadow: 0 1px 0 #fff, 0 -1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff;
-}
 
 .link {
     fill: none;
@@ -180,5 +153,3 @@ header {
     padding: 0.5em;
     float: left;
 }
-
-

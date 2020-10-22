@@ -5,8 +5,8 @@ class Table {
    */
   constructor(teamData, treeObject) {
 
-    // Maintain reference to the tree Object; 
-    this.tree = treeObject; 
+    // Maintain reference to the tree Object;
+    this.tree = treeObject;
 
     // Create list of all elements that will populate the table
     // Initially, the tableElements will be identical to the teamData
@@ -43,10 +43,10 @@ class Table {
 
     // Color scales
     // For aggregate columns  Use colors '#ece2f0', '#016450' for the range.
-    this.aggregateColorScale = null; 
+    this.aggregateColorScale = null;
 
     // For goal Column. Use colors '#cb181d', '#034e7b'  for the range.
-    this.goalColorScale = null; 
+    this.goalColorScale = null;
 
   }
 
@@ -122,8 +122,8 @@ class Table {
       });
 
     // Clicking on headers should also trigger collapseList() and
-    // updateTable(). 
-    
+    // updateTable().
+
   }
 
 
@@ -177,7 +177,7 @@ class Table {
         this.updateList(d.i);
       })
     ;
-    
+
     // console.log('rows', rows);
 
     // Create the rest of the table
@@ -218,7 +218,7 @@ class Table {
       return d != null && d.vis == 'text';
     }).html(d => d.value);
 
-    
+
     // remove bar and goal graphs
     d3.selectAll('td').filter(function(d) {
       return d != null && (d.vis == 'bar' || d.vis == 'goals');
@@ -244,7 +244,7 @@ class Table {
       .attr('y', 0)
       .attr('width', d => this.gameScale(d.value))
       .attr('height', this.bar.height)
-      .attr('fill', d => d3.hsl(136, sscale(d.value), lscale(d.value)))
+      .attr('fill', d => d3.hsl(271, sscale(d.value), lscale(d.value)))
     ;
 
     bars
@@ -311,10 +311,10 @@ class Table {
 
     // Append th elements for the Team Names
 
-    // Append td elements for the remaining columns. 
+    // Append td elements for the remaining columns.
     // Data for each cell is of the type: {'type':<'game' or 'aggregate'>,
     // 'value':<[array of 1 or two elements]>}
-    
+
     //Add scores as title property to appear on hover
 
     //Populate cells (do one type of cell at a time)
@@ -342,7 +342,7 @@ class Table {
       this.tableElements[i].value.games).concat(this.tableElements.slice(i+1));
 
     this.updateListIndices();
-    
+
     // Only update list for aggregate clicks, not game clicks
     this.updateTable();
   }
@@ -352,7 +352,7 @@ class Table {
    * values per country.
    */
   collapseList() {
-    
+
     // ******* TODO: PART IV *******
     this.tableElements = this.tableElements.filter(d => {
       return d.value.type == 'aggregate';
