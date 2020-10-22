@@ -3,21 +3,25 @@ class Table {
   /**
    * Creates a Table Object
    */
-  constructor(teamData, treeObject) {
+  constructor(langData, treeObject) {
 
     // Maintain reference to the tree Object; 
     this.tree = treeObject; 
+    console.log("this.tree: ", this.tree)
 
     // Create list of all elements that will populate the table
-    // Initially, the tableElements will be identical to the teamData
-    this.tableElements = teamData.slice();
+    // Initially, the tableElements will be identical to the langData
+    this.tableElements = langData.slice();
+    console.log("this.tableElements: ", this.tableElements)
     this.updateListIndices();
 
     // Store all match data for the 2014 Fifa cup
-    this.teamData = teamData;
+    this.langData = langData;
+    console.log("this.langData: ", this.langData)
 
     // Default values for the Table Headers
     this.tableHeaders = ["Delta Goals", "Result", "Wins", "Losses", "TotalGames"];
+    this.tableHeaders = ["name", "macroarea", "genus_pk"];
 
     // To be used when sizing the svgs in the table cells.
     this.cell = {
@@ -63,13 +67,13 @@ class Table {
     // ******* TODO: PART II *******
 
     // Update Scale Domains
-    let maxGoals = d3.max(this.teamData, function(d) {
+    let maxGoals = d3.max(this.langData, function(d) {
       return d3.max([d.value['Goals Conceded'], d.value['Goals Made']]);
     });
 
     this.goalScale.domain([0, maxGoals]).range([10, this.goalsWidth-10]);
 
-    let maxGames = d3.max(this.teamData, function(d) {
+    let maxGames = d3.max(this.langData, function(d) {
       return d.value['TotalGames'];
     });
 

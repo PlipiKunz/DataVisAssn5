@@ -19,7 +19,7 @@ d3.json('data/fifa-matches.json').then(function(data) {
 
     // Create Table Object and pass in reference to tree object
     // (for hover linking)
-    let table = new Table(data,tree);
+    let table = new Table(data, tree);
 
     table.createTable();
     table.updateTable();
