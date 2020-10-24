@@ -15,7 +15,10 @@ th {
 .round-header {
     min-width: 125px;
 }
-
+thead {
+    padding: 10px;
+    margin: 20px;
+}
 thead td , th{
     cursor: s-resize;
 }
@@ -81,7 +84,7 @@ body{
 }
 
 header {
-    padding: 0.5em;
+    padding: 1em;
     /*clear: left;*/
     text-align: center;
     height: 100px;

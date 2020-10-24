@@ -18,7 +18,7 @@ class Table {
 
     // Default values for the Table Headers
     // this.tableHeaders = ["Delta Goals", "Result", "Wins", "Losses", "TotalGames"];
-    this.tableHeaders = ["name", "macroarea", "genus_pk", "region", "siblings"];
+    this.tableHeaders = ["name", "macroarea", "genus_pk", "siblings"];
 
     // To be used when sizing the svgs in the table cells.
     this.cell = {
@@ -54,9 +54,10 @@ class Table {
   createTable() {
     this.updateList(0);
 
-    // // ******* TODO: PART II *******
+    // ******* TODO: PART II *******
+    // ******* TODO: PART II *******
 
-    // // Update Scale Domains
+    // Update Scale Domains
     // let maxGoals = d3.max(this.teamData, function(d) {
     //   return d3.max([d.value['Goals Conceded'], d.value['Goals Made']]);
     // });
@@ -114,6 +115,8 @@ class Table {
     //     thisTable.updateTable();
     //     // console.log(col);
     //   });
+    // ******* TODO: PART II *******
+    // ******* TODO: PART II *******
 
     // Clicking on headers should also trigger collapseList() and
     // updateTable().
@@ -138,17 +141,8 @@ class Table {
       .enter()
       .append('tr')
       .attr('class', 'tableRow')
-      // .attr()
-      .merge(rows)
-      // .on('mouseover', d => {
-      //   // console.log(d);
-      //   this.tree.updateTree(d.properties.name);
-      // })
-      // .on('mouseout', d => {
-      //   // console.log(d);
-      //   this.tree.clearTree();
-      // })
-    ;
+      .merge(rows);
+
     // Create Team column
     let headers = rows
       .selectAll('th')
@@ -228,58 +222,58 @@ class Table {
     //   .attr('fill', 'white')
     // ;
 
-    // goals
-    let goalHeight = this.bar.height*5/8;
-    let goalHeightGame = goalHeight/4;
-    let goalSvgs = d3.selectAll('td').filter(function(d) {
-      return d != null && d.vis == 'goals';
-    })
-      .append('svg')
-      .attr('width', this.goalsWidth)
-      .attr('height', this.bar.height);
+    // // goals
+    // let goalHeight = this.bar.height*5/8;
+    // let goalHeightGame = goalHeight/4;
+    // let goalSvgs = d3.selectAll('td').filter(function(d) {
+    //   return d != null && d.vis == 'goals';
+    // })
+    //   .append('svg')
+    //   .attr('width', this.goalsWidth)
+    //   .attr('height', this.bar.height);
 
-    goalSvgs
-      .append('rect')
-      .attr('x', d => this.goalScale(d.min))
-      .attr('y', d => {
-        if (d.type == 'aggregate')
-          return (this.bar.height-goalHeight)/2;
-        return (this.bar.height-goalHeightGame)/2;
-      })
-      .attr('width', d => this.goalScale(d.max)-this.goalScale(d.min))
-      .attr('height', function(d) {
-        if (d.type == 'aggregate')
-          return goalHeight;
-        return goalHeightGame;
-      })
-      .attr('fill', d => {
-        if (d.min == d.conceded)
-          return 'blue';
-        return 'red';
-      })
-      .attr('class', 'goalBar')
-    ;
+    // goalSvgs
+    //   .append('rect')
+    //   .attr('x', d => this.goalScale(d.min))
+    //   .attr('y', d => {
+    //     if (d.type == 'aggregate')
+    //       return (this.bar.height-goalHeight)/2;
+    //     return (this.bar.height-goalHeightGame)/2;
+    //   })
+    //   .attr('width', d => this.goalScale(d.max)-this.goalScale(d.min))
+    //   .attr('height', function(d) {
+    //     if (d.type == 'aggregate')
+    //       return goalHeight;
+    //     return goalHeightGame;
+    //   })
+    //   .attr('fill', d => {
+    //     if (d.min == d.conceded)
+    //       return 'blue';
+    //     return 'red';
+    //   })
+    //   .attr('class', 'goalBar')
+    // ;
 
-    goalSvgs
-      .append('circle')
-      .attr('cx', d => this.goalScale(d.conceded))
-      .attr('cy', this.bar.height/2)
-      .attr('class', function(d) {
-        if (d.type == 'aggregate')
-          return 'goalCircle goalCircle-aggregate-min';
-        return 'goalCircle goalCircle-game-min';
-        })
-    ;
-    goalSvgs
-      .append('circle')
-      .attr('cx', d => this.goalScale(d.made))
-      .attr('cy', this.bar.height/2)
-      .attr('class', function(d) {
-        if (d.type == 'aggregate')
-          return 'goalCircle goalCircle-aggregate-max';
-        return 'goalCircle goalCircle-game-max';
-        })
-    ;
+    // goalSvgs
+    //   .append('circle')
+    //   .attr('cx', d => this.goalScale(d.conceded))
+    //   .attr('cy', this.bar.height/2)
+    //   .attr('class', function(d) {
+    //     if (d.type == 'aggregate')
+    //       return 'goalCircle goalCircle-aggregate-min';
+    //     return 'goalCircle goalCircle-game-min';
+    //     })
+    // ;
+    // goalSvgs
+    //   .append('circle')
+    //   .attr('cx', d => this.goalScale(d.made))
+    //   .attr('cy', this.bar.height/2)
+    //   .attr('class', function(d) {
+    //     if (d.type == 'aggregate')
+    //       return 'goalCircle goalCircle-aggregate-max';
+    //     return 'goalCircle goalCircle-game-max';
+    //     })
+    // ;
 
     // Append th elements for the Team Names
 
