@@ -1,32 +1,18 @@
-// Loads in the table information from fifa-matches.json
-d3.json('data/fifa-matches.json').then(function(data) {
-  // console.log('table data');
-  // console.log(data);
 
-   // Loads in the tree information from fifa-tree.csv and calls
-   // createTree(csvData) to render the tree.
-  d3.csv("data/languageTree.csv").then(function(csvData) {
-    // console.log('data');
-    // console.log(csvData);
-    //Create a unique "id" field for each game
-    csvData.forEach(function (d, i) {
-      d.id = d.langcode;
-    });
+d3.csv("data/languageTree.csv").then(function(csvData) {
 
-    //Create Tree Object
-    let tree = new Tree();
-    tree.createTree(csvData);
+  csvData.forEach((d, i) => d.id = d.langcode);
 
-  });
+  let tree = new Tree();
+  tree.createTree(csvData);
 
-  d3.json('data/languagedata.json').then(data => {
-    // Create Table Object and pass in reference to tree object
-    // (for hover linking)
-    let table = new Table(data,tree);
+});
 
-    table.createTable();
-    table.updateTable();
-  });
+d3.json('data/languagedata.json').then(data => {
+  let table = new Table(data);
+
+  table.createTable();
+  table.updateTable();
 });
 
 
