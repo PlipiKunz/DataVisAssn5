@@ -24,8 +24,8 @@ class Tree {
     // Create a root for the tree using d3.stratify();
     let root = d3.stratify()
       .id(function(d, i) {
-        console.log(i+2);
-        console.log(d);
+        // console.log(i+2);
+        // console.log(d);
         return (i+2);
       })
       .parentId(function(d) { return d['Parent']; })

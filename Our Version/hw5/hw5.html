@@ -7,15 +7,25 @@
     <link rel="stylesheet" href="styles.css"/>
     <!--script src="https://d3js.org/d3.v4.js"></script-->
     <script src="d3.js"></script>
-  </head>
+
+    <!-- BOOTSTRAP -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>  
+</head>
 
   <body>
 
     <div class="container">
       <header>
-        <img src="assets/fifa_brazil_logo.jpg" alt="Brazil WC Russia Logo" id="logo"/>
-        <h1>Exploring Match Statistics for 2014 World Cup CS 5890 Homework</h1>
-        <div>Name: YOURNAME; E-Mail: YOUREMAIL; UID: u0123456</div>
+        <img src="assets/logo.jpg" alt="Counrty Flags Logo" id="logo"/>
+        <h1 class="" >Exploring Languages</h1>
+        <h3>CS 5890 Homework</h3>
       </header>
 
 
@@ -25,16 +35,10 @@
         <table id="matchTable">
           <thead>
             <tr>
-              <th class="header">Team</th>
-              <td style="text-align:center"> Goals <span class="glyphicon glyphicon-sort"></span><br/></td>
-              <td class="header round-header">Round/Result</td>
-              <td class="header">Wins</td>
-              <td class="header">Losses</td>
-              <td class="header">Total Games</td>
-            </tr>
-            <tr>
-              <td></td>
-              <td id="goalHeader"></td>
+              <th class="header">Language</th>
+              <td style="text-align:center">Area</td>
+              <td class="header round-header">Siblings</td>
+              <td class="header">Cousins</td>
             </tr>
           </thead>
           <tbody>
@@ -43,9 +47,8 @@
         </table>
 
       </div>
+
       <div class="view">
-
-
         <h2>Second Stage</h2>
         <svg width="500" height="900">
           <g id="tree"></g>
